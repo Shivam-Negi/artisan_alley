@@ -1,0 +1,254 @@
+body {
+
+    background-color: #D9D9D9; 
+}
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    align-items: center;
+}
+
+.logo-1 {
+
+    font-size: 60px;
+    color: #582F0E;
+    font-family: syncopate;
+    font-weight: lighter;
+}
+
+.logo-2 {
+
+    color: #582F0E;
+    font-family: syncopate;
+}
+
+
+h3 {
+
+    margin: 0;
+    font-size: 24px;
+    align-self: center;
+    font-weight: bold;
+    color: #582F0E;
+    font-family: syncopate;
+    align-items: center;
+}
+
+.product-desc-container {
+
+    margin-top: 100px;
+    display: grid;
+    background-color: #A4AC86;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 550px 805px;
+
+}
+
+.image-container-details {
+
+    display: flex;
+    background-color: #A4AC86;
+    position: relative; 
+    top: 50px;
+
+}
+
+.image-container {
+
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333D29;
+    width: 450px;
+    height: 450px;
+
+    
+    
+}
+
+
+.description-product {
+
+    display: flex;
+    justify-content: center;
+    font-size: 33px;
+    font-family: syncopate;
+    letter-spacing: 1px;
+    background-color: #D9D9D9; 
+    height: 1000px;
+    border: 1px solid #cfc2c2 ;
+    
+}
+
+
+.product-details {
+
+    position: relative;
+    top: 90%; left: 20%;
+    font-size: 30px;
+    font-family: syncopate;
+
+}
+
+.span-2 {
+    font-size: 25px;
+    color: rgb(78, 39, 32);
+    margin-bottom: 100px;
+}
+
+.seller-keyword {
+    position: relative;
+    bottom: 15px;
+}
+
+
+/*
+
+  .bargain-button {
+    position: relative;
+    top: 80px;
+    right: 122px;
+    height: 80px;   /* It was also working but the problem was, the middle part color was not changing, can be used if we don't mind to changing the color in the center of the button, Also this code section is easy compared to, where we used 'Pseudo-classes'.
+    width: 330px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 0px 80px;
+    border-color: #333D29;
+ 
+  }
+  
+  */
+
+  .bargain-button {
+    position: relative;
+    top: 80px;
+    right: 122px;
+    height: 80px;
+    width: 330px;
+    
+    border-style: solid;
+    border-width: 0px;
+    background-clip: padding-box;
+    background: 
+      linear-gradient(to right, #22281b, #333D29) left,
+      linear-gradient(to right, #cac4c4 , #D9D9D9 ) center,
+      linear-gradient(to right, #22281b, #333D29) right;
+    background-size: 25% 100%, 50% 100%, 25% 100%;
+    background-repeat: no-repeat;
+    background-position: left top, center top, right top;
+  }
+
+
+.bargain-button::before,
+.bargain-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px; 
+  height: 100%;
+
+ 
+
+}
+
+.bargain-button:hover::before {
+    cursor: pointer;
+    left: 0;
+  }
+  
+  .bargain-button:hover::after {
+    cursor: pointer;
+    right: 0;
+  }
+  
+
+  .bargain-button:hover:before {
+    cursor: pointer;
+  }
+
+  .bargain-button:hover::after {
+    cursor: pointer;
+  }
+
+  
+
+.product-actions-list {
+    position: relative;
+    top: 20%;
+    right: 33px;
+}
+
+ul {
+    list-style: none;
+  }
+  
+  li:before {
+    content: "➤";
+    font-size: 25px;
+    margin-right: 5px;
+    padding-right: 10px;
+  }
+
+  li {
+    margin-bottom: 30px;
+  }
+
+.item:hover {
+    cursor: pointer;
+}
+  
+
+  .similar-items {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    font-family: syncopate;
+    font-size: 40px;
+    font-weight: lighter;
+  }
+
+  .similar-items-grid {
+
+    margin-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      
+      .item {
+        margin: 30px;
+        height: 350px;
+        width: 350px;
+        margin-bottom: 20px;
+        background-color: #333D29;
+        border: 1px solid #ddd;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      
+
+      .pink-section {
+        margin-top: 60px;
+        height: 600px;
+        background-color: #db8b69;
+        
+      }
+
+
+  
+
+
+  
+
+  
+
+  
+  
+
+
+  

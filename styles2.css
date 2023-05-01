@@ -1,0 +1,160 @@
+body {
+    background-color: #D9D9D9;
+}
+
+.header {
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-1 {
+    font-size: 60px;
+    color: brown;
+    font-family: syncopate;
+}
+
+.logo-2 {
+    color: brown;
+    font-family: syncopate;
+}
+
+h3 {
+    margin: 0;
+    font-size: 24px;
+    align-self: center;
+    font-weight: bold;
+    color: brown;
+    font-family: syncopate;
+    align-items: center;
+}
+
+.filter-bg {
+    background-color: #a4ac86;
+    margin-top: 50px;
+    padding: 100px;
+    text-align: center;
+    font-size: 25px;
+    font-family: syncopate;
+    font-weight: bold;
+}
+
+.pink-section {
+    background-color: #d9c9b9;
+    margin-top: -33px;
+    padding: 40px;
+}
+
+.arrow-icon {
+    position: relative;
+    top: 20px;
+    margin-left: 100px;
+}
+
+.feature-content {
+    font-size: 25px;
+    margin-top: 50px;
+    border: 1px solid rgb(202, 202, 185);
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 2.8rem;
+    padding: 30px;
+    background-color: rgb(215, 215, 203);
+    font-family: syncopate;
+}
+
+.know-more-button {
+    margin-left: 10px;
+    border: 1px solid;
+    color: #333d29;
+    box-sizing: border-box;
+    border-radius: 1.8rem;
+    font-family: syncopate;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 80px;
+    padding: 150px;
+    margin-top: -60px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: white;
+    border: 1px solid;
+    padding: 100px;
+    font-size: 30px;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    background-color: #414833;
+    font-family: syncopate;
+    border: 1px solid #414833;
+    border: none;
+}
+
+.grid-item-text {
+    margin: -100px;
+    padding-top: 50px;
+    padding-bottom: 0px;
+
+    background-color: #a4ac86;
+}
+
+.name-name {
+    position: relative;
+    bottom: 25px;
+    font-family: syncopate;
+}
+
+.grid-bookmark {
+    position: relative;
+    left: 180px;
+    bottom: 30px;
+}
+
+.nav-arrows {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 120px;
+}
+
+.left-nav {
+    border: 1px solid brown;
+    padding: 10px;
+    margin: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2 ease-in-out;
+}
+
+.right-nav {
+    border: 1px solid brown;
+    padding: 10px;
+    margin: 50px;
+    border-radius: 50%;
+    position: relative;
+    left: 22px;
+    cursor: pointer;
+    transition: all 0.2 ease-in-out;
+}
+
+.left-nav:hover,
+.right-nav:hover {
+    transform: scale(0.9);
+}
+
+.blank-bg-color {
+    margin: 0;
+    background-color: lightpink;
+    padding: 300px;
+}
