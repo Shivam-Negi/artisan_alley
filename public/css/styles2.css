@@ -73,13 +73,27 @@ h3 {
     font-family: syncopate;
     padding: 10px;
     cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 2;
+    
+}
+    
+    
+
+
+.know-more-button:hover {
+    cursor: pointer;
+    transform: scale(0.9) !important;
+    color: red;
 }
 
 .grid-container {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 80px;
+    grid-gap: 150px;
     padding: 150px;
     margin-top: -60px;
 }
@@ -102,18 +116,27 @@ h3 {
 }
 
 .grid-item-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
     margin: -100px;
-    padding-top: 50px;
-    padding-bottom: 0px;
-
-    background-color: #a4ac86;
+    text-align: center;
+    background-color: #A4AC86;
 }
 
 .name-name {
-    position: relative;
+    position:relative;
     bottom: 25px;
     font-family: syncopate;
 }
+
+.product-name-1 {
+    position: relative;
+    bottom: 50px;
+}
+
+
 
 .grid-bookmark {
     position: relative;
@@ -155,6 +178,15 @@ h3 {
 
 .blank-bg-color {
     margin: 0;
-    background-color: lightpink;
+    background-color: #41462c;
     padding: 300px;
+}
+
+
+.product-image-1 {
+    height: 450px;
+    width: 450px;
+    position: relative; 
+    bottom: 100px;
+
 }

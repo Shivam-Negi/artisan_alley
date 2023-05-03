@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="styles3.css" />
+    <link rel="stylesheet" href="/css/styles3.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
       <div class="image-container-details">
         <div class="product-details">
           <span class="span-1"
-            >NAME <br />
+            >JORDAN <br />
             <br />
             RS 1000 <br />
             <br />
@@ -39,7 +39,22 @@
             generate a request to the <br />
             <span class="seller-keyword">seller</span>
           </span>
-          <button class="bargain-button"></button>
+
+
+          <!-- <button class="bargain-button"></button> -->
+          <div class="bargain-container">
+            <div class="bargain-input">
+              <span class="price-label">₹</span>
+              <input type="number" id="price-input">
+            </div>
+            <div class="bargain-btn-container">
+              <button class="bargain-btn minus-btn">-</button>
+              <button class="bargain-btn plus-btn">+</button>
+            </div>
+          </div>
+          
+          
+
           <ul class="product-actions-list">
             <li>ADD TO WISHLISHT</li>
             <li>ADD TO CART</li>
@@ -47,7 +62,7 @@
           </ul>
         </div>
 
-        <div class="image-container"></div>
+        <div class="image-container"><img class="product-image-2" src="/images_project/jordan.jpg" alt=""></div>
       </div>
       <div class="description-product"><p>DESCRIPTION</p></div>
     </div>
@@ -63,5 +78,8 @@
     </div>
 
     <div class="pink-section"></div>
+
+    <script src="bargainLogic.js"></script>
+
   </body>
 </html>

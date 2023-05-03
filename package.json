@@ -1,0 +1,22 @@
+{
+  "name": "artisan-alley",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shivam-Negi/artisan_alley.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shivam-Negi/artisan_alley/issues"
+  },
+  "homepage": "https://github.com/Shivam-Negi/artisan_alley#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
