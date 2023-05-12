@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../css/styles2.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Syncopate&display=swap"
+    rel="stylesheet" />
+  <title>Artisan Alley</title>
+</head>
+
+<body>
+  <header class="header">
+    <h2>
+      <span class="logo-1">A</span><span class="logo-2">RTISAN ALLEY</span>
+    </h2>
+    <h3>ABOUT</h3>
+  </header>
+
+  <h4 class="filter-bg">FILTERS</h4>
+  <div class="pink-section"></div>
+  <img class="arrow-icon" src="images_projects/right-arrow.png" alt="" />
+  <div class="feature-content">
+    Have you TrieD Our BarGain feaTure?
+    <a href="/buy/product" target="_blank" class="know-more-button">KNOW MORE </a>
+    <div class="grid-container">
+        <% for (let i = 0; i < products.length; i++) { %>
+          <div class="grid-item">
+            <a href="/buy/product/<%= products[i]._id %>" class="product-link">
+              <span class="grid-item-text">
+                <span class="name-name">NAME <br />
+                  <img class="grid-bookmark" src="images_project/bookmark.png" alt="" /><br />
+                  <img class="product-image-1" src="<%= products[i].image %>">
+                  <span class="product-name-1"><%= products[i].name %></span><br>
+                  <%= products[i].price %> Rs
+                </span>
+              </span>
+            </a>
+          </div>
+        <% } %>
+      </div>
+      <div class="nav-arrows">
+        <div><img class="left-nav" src="images_project/left-arrow.png" alt="" /></div>
+        <div><img class="right-nav" src="images_project/right-arrow.png" alt="" /></div>
+      </div>
+      <div class="blank-bg-color"></div>
+    </body>
+    </html>

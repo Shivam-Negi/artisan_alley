@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/css/styles3.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Syncopate&display=swap"
+    rel="stylesheet" />
+  <title>Artisan Alley</title>
+</head>
+
+<body>
+  <header class="header">
+    <h2>
+      <span class="logo-1">A</span><span class="logo-2">RTISAN ALLEY</span>
+    </h2>
+    <h3>ABOUT</h3>
+  </header>
+
+  <div class="product-desc-container">
+    <div class="image-container-details">
+      <div class="product-details">
+        <span class="span-1"><%= product.name %><br /><br />
+          RS <%= product.price %><br /><br /><br />
+          BARGAIN<br /><br />
+        </span>
+        <span class="span-2">
+          ( Want to Bargain? )<br />
+          Just by clicking, you can<br />
+          generate a request to the <span class="seller-keyword">seller</span>
+        </span>
+
+        <div class="bargain-container">
+          <div class="bargain-input">
+            <span class="price-label">₹</span>
+            <input type="number" id="price-input">
+          </div>
+          <div class="bargain-btn-container">
+            <button class="bargain-btn minus-btn">-</button>
+            <button class="bargain-btn plus-btn">+</button>
+          </div>
+        </div>
+
+        <ul class="product-actions-list">
+          <li>ADD TO WISHLIST</li>
+          <li>ADD TO CART</li>
+          <li>REVIEW</li>
+        </ul>
+      </div>
+
+      <div class="image-container"><img class="product-image-2" src="<%= product.image %>" alt=""></div>
+    </div>
+    <div class="description-product">
+      <p>DESCRIPTION</p>
+      <p><%= product.description %></p>
+    </div>
+  </div>
+  
+  <h1 class="similar-items">SIMILAR ITEMS</h1>
+  <div class="similar-items-grid">
+    <% for (let i = 0; i < similarItems.length; i++) { %>
+      <div class="item">
+        <img class="similar-item-image" src="<%= similarItems[i].image %>" alt="">
+        <span class="similar-item-name"><%= similarItems[i].name %></span>
+        <span class="similar-item-price">RS <%= similarItems[i].price %></span>
+      </div>
+    <% } %>
+  </div>
+  
+  <div class="pink-section"></div>
+  
+  <script src="../bargainLogic.js"></script>
+</body>
+</html>  
