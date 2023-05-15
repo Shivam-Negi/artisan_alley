@@ -1,0 +1,104 @@
+body {
+  background-color: #d9d9d9;
+}
+  
+.header {
+  padding: 0 50px;
+  background-color: transparent;
+  color: #582F0E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: syncopate;
+  cursor: pointer;
+}
+
+
+.logo-1 {
+  font-size: 60px;
+  color: #582F0E;
+
+}
+
+  .container {
+    padding: 100px;
+    position: relative; bottom: 200px;
+    
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: syncopate;
+    margin-top: 200px;
+    margin-bottom: 30px;
+    color: #63781f;
+    font-size: 25px;
+  }
+
+  label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input[type="text"],
+  .input-group input[type="number"],
+  .input-group textarea {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid green;
+    box-sizing: border-box;
+  }
+
+  .input-group input[type="text"]:focus,
+  .input-group input[type="number"]:focus,
+  .input-group textarea:focus {
+    
+    background-color: #edf9cb;
+
+  }
+
+
+  
+  
+  .input-group textarea {
+    height: 100px;
+  }
+  
+  .input-group input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  .submit-btn {
+    background-color: #4b5821;
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+  }
+
+  .submit-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .submit-btn-span {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  
+  }
+  
+  

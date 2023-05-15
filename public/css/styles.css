@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
 body {
   margin: 0;
-  background-color: #D9D9D9;
-  
+  background-color: #d9d9d9;
 }
 
 .header {
   padding: 0 50px;
   background-color: transparent;
-  color: brown;
+  color: #582f0e;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,10 +19,8 @@ body {
 
 .logo-1 {
   font-size: 60px;
-  color: brown;
-
+  color: #582f0e;
 }
-
 
 .nav-bar {
   list-style: none;
@@ -40,7 +40,7 @@ body {
 
 .button-1,
 .button-2 {
-  border: 2px solid brown;
+  border: 2px solid #582f0e;
   border-radius: 1.5rem;
   box-sizing: border-box;
   margin: 15px;
@@ -56,11 +56,11 @@ body {
 }
 
 .button-2 {
-  background-color: brown;
+  background-color: #582f0e;
 }
 
 .button-1 a {
-  color: brown;
+  color: #582f0e;
 }
 
 .button-2 a {
@@ -74,22 +74,24 @@ body {
 }
 
 .para-1 {
-  color: brown;
+  color: #582f0e;
   font-size: 30px;
   font-family: syncopate;
   font-weight: normal;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .para-2 {
-  color: brown;
+  color: #333d29;
   font-size: 50px;
   font-family: syncopate;
-  font-weight: bold;
+  font-weight: normal;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .qoutes {
   color: black;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 .grid-cl-2 {
@@ -102,7 +104,7 @@ body {
 }
 
 .cl-1 {
-  background-color: #C2C5AA;
+  background-color: #c2c5aa;
   font-size: larger;
   line-height: 1.7;
   text-align: center;
@@ -122,13 +124,13 @@ body {
 .desc-1 {
   color: #333d29;
   font-size: 1.1rem;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 .desc-2 {
   color: #333d29;
   font-size: 1.1rem;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 .content {
@@ -188,6 +190,13 @@ body {
   position: relative;
   top: 250px;
   left: 100px;
+  overflow: hidden; /* Ensure the image stays within the circle */
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: revert-layer; /* Maintain aspect ratio and cover the entire circle */
 }
 
 .about-us {
@@ -201,27 +210,81 @@ body {
 
 .about-us-2 {
   position: relative;
-  top: 280px;
   margin-left: 40px;
   font-family: syncopate;
   font-size: 40px;
 }
 
+.about-us-content {
+  padding: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+.social-media-links {
+  margin-top: 20px;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-size: 40px;
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.material-icons:hover {
+  color: #0056b3;
+}
+
+.material-icons:active {
+  transform: scale(0.95);
+}
+
+.social-media-links {
+  margin-top: 20px;
+}
+
+.social-media-links p {
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  margin-bottom: 10px;
+  padding-left: 20px; /* Add left padding */
+}
+
+.social-media-links a {
+  display: inline-block;
+  font-family: "Material Icons";
+  font-size: 35px;
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+  margin-left: 20px;
+}
+
+.social-media-links a:hover {
+  color: #0056b3;
+}
+
+.social-media-links a:active {
+  transform: scale(0.95);
+}
 
 .scroll-bar {
   text-decoration: none;
-  color: brown;
-  border: 2px solid brown;
+  color: #582f0e;
+  border: 2px solid #582f0e;
   padding: 5px;
   border-radius: 1.5rem;
   font-size: 20px;
   font-weight: bold;
-
 }
 
 .scroll-bar:hover {
   cursor: pointer;
-  transform: skew(5deg, 10deg);
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 html {

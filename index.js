@@ -1,113 +1,116 @@
-/* const knowMoreBtn = document.getElementById("know-more-btn");
-  knowMoreBtn.addEventListener("click", function() {
-    window.location.href = "./buy_page.html";
-  }); */
-
-
-/* const express = require('express');
-const app = express();
-
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
-
-app.get('/', (req,res) => {
-    res.sendFile(__dirname + "/index.html");
-});
-
-app.get('/buy', (req,res) => {
-    res.sendFile(__dirname + '/buy_page.html');
-});
-
-app.get('/buy/product', (req, res) => {
-  res.sendFile(__dirname + '/bargaining_page.html')
-})
-
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-}); */
-
-
 const express = require('express');
 const app = express();
-const path = require('path');
-const MongoClient = require('mongodb').MongoClient;
-const ObjectId = require('mongodb').ObjectId;
+const mongoose = require('mongoose');
 
+app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
-const uri = 'mongodb://localhost:27017/artisan_alley';
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+//connect to mongodb
+mongoose.set('strictQuery', false);
+mongoose.connect(
+  'mongodb://localhost:27017/artisan_alley',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
+
+//product Schema
+const productSchema = new mongoose.Schema({
+  name: String,
+  price: Number,
+  bprice: Number,
+  image: String,
+  desc: String,
+});
+const products = mongoose.model('product', productSchema);
+
+// seller schema
+const sellerSchema = new mongoose.Schema({
+  FName: String,
+  LName: String,
+  email: String,
+  password: String,
+});
+const seller = mongoose.model('seller', sellerSchema);
 
 // Define the routes
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + 'public/index.html');
 });
 
-app.get('/buy', (req, res) => {
-  client.connect((err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('An error occurred');
-      return;
-    }
-
-    const db = client.db('artisan_alley');
-    const collection = db.collection('products');
-    
-    collection.find().toArray((err, products) => {
-      if (err) {
-        console.error(err);
-        res.status(500).send('An error occurred');
-        return;
-      }
-
-      res.render('buy_page', { products });
-    });
-  });
-});
-
-/* app.get('/buy', (req, res) => {
-  res.render('buy_page');
-}); */
-
-
-app.get('/buy/product/:id', (req, res) => {
-  console.log('here')
-  const productId = req.params.id;
-
-  client.connect((err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('An error occurred');
-      return;
-    }
-
-    const db = client.db('artisan_alley');
-    const collection = db.collection('products');
-    
-    collection.findOne({ _id: ObjectId(productId) }, (err, product) => {
-      if (err) {
-        console.error(err);
-        res.status(500).send('An error occurred');
-        return;
-      }
-
-      collection.find({ category: product.category }).toArray((err, similarItems) => {
-        if (err) {
-          console.error(err);
-          res.status(500).send('An error occurred');
-          return;
-        }
-
-        res.render('bargaining_page', { product, similarItems });
+app.get('/buy', async (req, res) => {
+  products.find().then((foundProducts) => {
+    if (foundProducts) {
+      res.render('buy_page', {
+        foundProducts: foundProducts,
       });
-    });
+    } else {
+      res.send('not found');
+    }
   });
 });
+
+app.get('/buy/product/:name', async (req, res) => {
+  const name = req.params.name;
+  products.findOne({ name }).then((product) => {
+    //console.log(name);
+    if (product) {
+      res.render('bargaining_page', {
+        product: product,
+      });
+    } else {
+      res.send('not found');
+    }
+  });
+});
+
+app
+  .route('/sellerRegistration')
+  .get((req, res) => {
+    res.render('sellerRegistration');
+  });
+
+  app.post('/sellerRegistration', async (req, res) => {
+    const newSeller = new seller({
+      Fname: req.body.fName,
+      Lname: req.body.lName,
+      email: req.body.email,
+      password: req.body.password,
+    });
+  
+    try {
+      await newSeller.save();
+      res.status(200);
+      res.redirect('/sellerProducts');
+    } catch (err) {
+      res.render('error');
+    }
+  });
+  
+  app.route('/sellerProducts').get((req, res) => {
+    res.render('sellerProduct');
+  });
+  
+  app.post('/sellerProducts', async (req, res) => {
+    const newProduct = new products({
+      name: req.body.name,
+      price: req.body.price,
+      bprice: req.body.bprice,
+      image: req.body.image,
+      desc: req.body.desc,
+    });
+    try {
+      await newProduct.save();
+      res.status(200);
+      res.redirect('/buy');
+    } catch (err) {
+      res.send('error');
+    }
+  });
 
 const port = 3000;
 app.listen(port, () => {
